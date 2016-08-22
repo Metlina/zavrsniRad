@@ -2,13 +2,12 @@
 
 namespace Redux.Sample
 {
-    public partial class Redux.SamplePage : ContentPage
+    public partial class SamplePage : ContentPage
 	{
-		public Redux.SamplePage ()
+		public SamplePage ()
 		{
-
             InitializeComponent();
-}
+        }
 	}
 }
 

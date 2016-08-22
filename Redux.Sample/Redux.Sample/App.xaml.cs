@@ -8,7 +8,7 @@ namespace Redux.Sample
         {
             InitializeComponent();
 
-            MainPage = new Redux.SamplePage();
+            MainPage = new SamplePage();
         }
 
         protected override void OnStart()

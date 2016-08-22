@@ -43,6 +43,18 @@
     <Compile Include="FirstView.xaml.cs">
       <DependentUpon>FirstView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Redux\GlobalData.cs" />
+    <Compile Include="Redux\BaseStore.cs" />
+    <Compile Include="Serialize\BinarySerializableExtensions.cs" />
+    <Compile Include="Serialize\IBinarySerializable.cs" />
+    <Compile Include="Serialize\IFileBinarySerializer.cs" />
+    <Compile Include="Serialize\ISerializer.cs" />
+    <Compile Include="Serialize\ReadSerializer.cs" />
+    <Compile Include="Serialize\SerializerHelper.cs" />
+    <Compile Include="Serialize\WriteSerializer.cs" />
+    <Compile Include="ExceptionExtensions.cs" />
+    <Compile Include="DebugStopwatch.cs" />
+    <Compile Include="ViewModelLocator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -66,6 +78,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Redux\" />
+    <Folder Include="Serialize\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

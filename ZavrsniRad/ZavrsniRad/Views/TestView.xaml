@@ -3,6 +3,19 @@
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		x:Class="ZavrsniRad.TestView">
 
+	<Page.Resources>
+        <ResourceDictionary>
+			
+            <OnPlatform x:Key="LogoPictureWidth"
+                        x:TypeArguments="x:Double"
+                        iOS="132"
+                        Android="132"
+                        WinPhone="80"
+                        />
+			
+		</ResourceDictionary>
+	</Page.Resources>
+
 	<Grid HorizontalOptions="Center"
 		  VerticalOptions="Center"
 		  Padding="12">

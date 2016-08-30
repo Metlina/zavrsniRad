@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="ZavrsniRad.StartQuizView"
+        BackgroundColor="{StaticResource BackgroundColor}"
+		>
+
+	<Page.Resources>
+        <ResourceDictionary>
+			
+            <OnPlatform x:Key="TitleMargin"
+                        x:TypeArguments="Thickness"
+                        iOS="0,24"
+                        Android="0,24"
+                        />
+			
+		</ResourceDictionary>
+	</Page.Resources>
+
+	<Grid Padding="12">
+		
+		<Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<Label Text="Quizco"
+			   TextColor="{StaticResource TitleColor}"
+			   FontSize="30"
+			   Margin="{StaticResource TitleMargin}"
+			   VerticalOptions="Center"
+			   FontAttributes="Bold"
+			   HorizontalOptions="Center"	
+			   />
+
+		<Button Grid.Row="1"
+			    Text="Start quiz"
+				TextColor="{StaticResource TextColor}"
+				BackgroundColor="{StaticResource ButtonColor}"
+				HorizontalOptions="Fill"
+				VerticalOptions="Center"
+				Command="{Binding StartQuizCommand}"
+				Margin="0,56,0,12"
+			    />
+
+		<Button Grid.Row="2"
+                Text="About"
+                TextColor="{StaticResource TextColor}"
+                BackgroundColor="{StaticResource ButtonColor}"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center"
+                Command="{Binding AboutCommand}"
+                Margin="0,12,0,56"
+                />
+		
+	</Grid>
+	
+</ContentPage>

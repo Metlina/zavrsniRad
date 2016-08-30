@@ -3,6 +3,22 @@
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		x:Class="ZavrsniRad.App">
 	<Application.Resources>
-		<!-- Application resource dictionary -->
+
+		<ResourceDictionary>
+            <Color x:Key="BackgroundColor">#F3F3F3</Color>
+			<Color x:Key="TitleColor">#444444</Color>
+            <Color x:Key="LetterColor">#0081FF</Color>
+            <Color x:Key="CorrectAnswerColor">#57B947</Color>
+            <Color x:Key="ButtonColor">#007EFF</Color>
+			<Color x:Key="TextColor">#3A3A3A</Color>
+
+			<OnPlatform x:Key="bagf"
+                        x:TypeArguments="x:Double"
+                        iOS="60"
+                        Android="60"
+                        />
+			
+		</ResourceDictionary>
+		
 	</Application.Resources>
 </Application>

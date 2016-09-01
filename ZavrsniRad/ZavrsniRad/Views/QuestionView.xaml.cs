@@ -1,15 +1,12 @@
 ﻿using Xamarin.Forms;
-using ZavrsniRad.ViewModels;
 
 namespace ZavrsniRad.Views
 {
-    public partial class StartQuizView : ContentPage
+    public partial class QuestionView : ContentPage
     {
-        public StartQuizView()
+        public QuestionView()
         {
             InitializeComponent();
-
-            BindingContext = new StartQuizViewModel();
 
             NavigationPage.SetHasNavigationBar(this, false);
         }

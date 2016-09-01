@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Windows.Input;
 using Xamarin.Forms;
+using ZavrsniRad.Views;
 
-namespace ZavrsniRad
+namespace ZavrsniRad.ViewModels
 {
     public class StartQuizViewModel
     {
@@ -17,7 +18,7 @@ namespace ZavrsniRad
 
         async void StartQuiz()
         {
-            var page = new StartQuizView();
+            var page = new CategoryView();
             await Application.Current.MainPage.Navigation.PushAsync(page);
         }
 

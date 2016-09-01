@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using ZavrsniRad.Views;
 
 namespace ZavrsniRad
 {

@@ -4,4 +4,24 @@
 		x:Class="ZavrsniRad.Views.QuestionView"
 		BackgroundColor="{StaticResource BackgroundColor}"
 		>
+
+	<Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+        <Grid BindingContext="{Binding CurrentQuestionViewModel}"
+			  Padding="12">
+			<Label Text="{Binding Text}"/>
+		</Grid>
+
+		<Button Grid.Row="1"
+				Text="Confirm"
+				Command="{Binding AnswerCommand}"
+				/>
+		
+	</Grid>
+	
 </ContentPage>

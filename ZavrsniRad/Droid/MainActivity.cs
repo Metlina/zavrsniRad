@@ -1,8 +1,6 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using GalaSoft.MvvmLight.Ioc;
-using ZavrsniRad.Model.Serialization;
 
 namespace ZavrsniRad.Droid
 {
@@ -19,8 +17,6 @@ namespace ZavrsniRad.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
-
-            SimpleIoc.Default.Register<IFileBinarySerializer, FileBinarySerializer>();
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 

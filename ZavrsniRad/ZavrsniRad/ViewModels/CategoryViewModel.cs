@@ -25,7 +25,7 @@ namespace ZavrsniRad.ViewModels
             var quizData = new QuizData();
             var easy = quizData.EasyQuestions;
 
-            var page = new QuestionView{ BindingContext = new QuestionViewModel(easy) };
+            var page = new QuestionView{ BindingContext = new QuestionsViewModel(easy) };
             Application.Current.MainPage.Navigation.PushAsync(page);
         }
 
@@ -34,7 +34,7 @@ namespace ZavrsniRad.ViewModels
             var quizData = new QuizData();
             var medium = quizData.MediumQuestions; 
 
-            var page = new QuestionView { BindingContext = new QuestionViewModel(medium) };
+            var page = new QuestionView { BindingContext = new QuestionsViewModel(medium) };
             Application.Current.MainPage.Navigation.PushAsync(page);
         }
 
@@ -43,7 +43,7 @@ namespace ZavrsniRad.ViewModels
             var quizData = new QuizData();
             var hard = quizData.HardQuestions;
 
-            var page = new QuestionView { BindingContext = new QuestionViewModel(hard) };
+            var page = new QuestionView { BindingContext = new QuestionsViewModel(hard) };
             Application.Current.MainPage.Navigation.PushAsync(page);
         }
     }

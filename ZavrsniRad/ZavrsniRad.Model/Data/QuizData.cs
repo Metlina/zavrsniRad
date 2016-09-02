@@ -19,7 +19,7 @@ namespace ZavrsniRad.Model.Data
             var questionEasy1 = new Question
             {
                 Id = 1,
-                Text = "",
+                Text = "Prvo pitanje",
                 FirstAnswer = "",
                 SecondAnswer = "",
                 ThirdAnswer = "",
@@ -30,7 +30,7 @@ namespace ZavrsniRad.Model.Data
             var questionEasy2 = new Question
             {
                 Id = 2,
-                Text = "",
+                Text = "Drugo pitanje",
                 FirstAnswer = "",
                 SecondAnswer = "",
                 ThirdAnswer = "",
@@ -41,7 +41,7 @@ namespace ZavrsniRad.Model.Data
             var questionEasy3 = new Question
             {
                 Id = 3,
-                Text = "",
+                Text = "Trece pitanje",
                 FirstAnswer = "",
                 SecondAnswer = "",
                 ThirdAnswer = "",
@@ -52,7 +52,7 @@ namespace ZavrsniRad.Model.Data
             var questionEasy4 = new Question
             {
                 Id = 4,
-                Text = "",
+                Text = "Cetvrto pitanje",
                 FirstAnswer = "",
                 SecondAnswer = "",
                 ThirdAnswer = "",
@@ -63,7 +63,7 @@ namespace ZavrsniRad.Model.Data
             var questionEasy5 = new Question
             {
                 Id = 5,
-                Text = "",
+                Text = "Peto Pitanje",
                 FirstAnswer = "",
                 SecondAnswer = "",
                 ThirdAnswer = "",

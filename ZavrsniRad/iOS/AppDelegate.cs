@@ -1,7 +1,5 @@
 ﻿using Foundation;
-using GalaSoft.MvvmLight.Ioc;
 using UIKit;
-using ZavrsniRad.Model.Serialization;
 
 namespace ZavrsniRad.iOS
 {
@@ -11,8 +9,6 @@ namespace ZavrsniRad.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-
-            SimpleIoc.Default.Register<IFileBinarySerializer, FileBinarySerializer>();
 
             LoadApplication(new App());
 

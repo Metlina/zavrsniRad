@@ -1,6 +1,4 @@
-﻿using ZavrsniRad.Model.Serialization;
-
-namespace ZavrsniRad.Model.Model
+﻿namespace ZavrsniRad.Model.Model
 {
     public enum Category
     {
@@ -8,7 +6,7 @@ namespace ZavrsniRad.Model.Model
         Medium,
         Hard
     }
-    public class Question : IBinarySerializable
+    public class Question
     {
         public int Id { get; set; }
         public string Text { get; set; }
@@ -17,15 +15,5 @@ namespace ZavrsniRad.Model.Model
         public string ThirdAnswer { get; set; }
         public int CorrectAnswer { get; set; }
         public Category Category { get; set; }
-
-        public void Serialize(ISerializer serializer)
-        {
-            serializer.Serialize(() => Text, v => Text = v);
-            serializer.Serialize(() => FirstAnswer, v => FirstAnswer = v);
-            serializer.Serialize(() => SecondAnswer, v => SecondAnswer = v);
-            serializer.Serialize(() => ThirdAnswer, v => ThirdAnswer = v);
-            serializer.Serialize(() => CorrectAnswer, v => CorrectAnswer = v);
-            serializer.Serialize(() => Category, v => Category = v);
-        }
     }
 }

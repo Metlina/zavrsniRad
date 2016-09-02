@@ -20,9 +20,9 @@ namespace ZavrsniRad.Model.Data
             {
                 Id = 1,
                 Text = "Prvo pitanje",
-                FirstAnswer = "",
-                SecondAnswer = "",
-                ThirdAnswer = "",
+                FirstAnswer = "ante",
+                SecondAnswer = "mate",
+                ThirdAnswer = "sime",
                 CorrectAnswer = 1,
                 Category = Category.Easy
             };
@@ -31,10 +31,10 @@ namespace ZavrsniRad.Model.Data
             {
                 Id = 2,
                 Text = "Drugo pitanje",
-                FirstAnswer = "",
-                SecondAnswer = "",
-                ThirdAnswer = "",
-                CorrectAnswer = 1,
+                FirstAnswer = "iafds",
+                SecondAnswer = "fdasf",
+                ThirdAnswer = "fdasfasd",
+                CorrectAnswer = 3,
                 Category = Category.Easy
             };
 
@@ -42,9 +42,9 @@ namespace ZavrsniRad.Model.Data
             {
                 Id = 3,
                 Text = "Trece pitanje",
-                FirstAnswer = "",
-                SecondAnswer = "",
-                ThirdAnswer = "",
+                FirstAnswer = "uihdfa",
+                SecondAnswer = "jo",
+                ThirdAnswer = "adfaoihfe eifoa",
                 CorrectAnswer = 1,
                 Category = Category.Easy
             };
@@ -53,9 +53,9 @@ namespace ZavrsniRad.Model.Data
             {
                 Id = 4,
                 Text = "Cetvrto pitanje",
-                FirstAnswer = "",
-                SecondAnswer = "",
-                ThirdAnswer = "",
+                FirstAnswer = "kanf;osadklfmas ",
+                SecondAnswer = "iuhfiafa",
+                ThirdAnswer = "21",
                 CorrectAnswer = 1,
                 Category = Category.Easy
             };
@@ -64,9 +64,9 @@ namespace ZavrsniRad.Model.Data
             {
                 Id = 5,
                 Text = "Peto Pitanje",
-                FirstAnswer = "",
-                SecondAnswer = "",
-                ThirdAnswer = "",
+                FirstAnswer = "iuhefuyagef",
+                SecondAnswer = "nsafansdf",
+                ThirdAnswer = "ikajfoaefefae",
                 CorrectAnswer = 1,
                 Category = Category.Easy
             };

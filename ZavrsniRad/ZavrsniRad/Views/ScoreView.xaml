@@ -1,7 +1,203 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-		x:Class="ZavrsniRad.Views.ScoreView">
-	<ContentPage.Content>
-	</ContentPage.Content>
+		x:Class="ZavrsniRad.Views.ScoreView"
+		BackgroundColor="{StaticResource BackgroundColor}"
+		>
+
+	<Page.Resources>
+		<ResourceDictionary>
+
+            <OnPlatform x:Key="GridHeight"
+                        x:TypeArguments="x:Double"
+                        iOS="60"
+                        Android="60"
+                        />
+
+            <OnPlatform x:Key="GridWidth"
+                        x:TypeArguments="x:Double"
+                        iOS="60"
+                        Android="60"
+					    />
+			
+            <DataTemplate x:Key="ItemTemplate"
+					      >
+				<ViewCell>
+                    <Grid Padding="12">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <StackLayout Orientation="Horizontal"
+								     VerticalOptions="Center"
+								     HorizontalOptions="Center"  
+								     >
+							<Label Text="{Binding QuestionNumberString}"
+                                   TextColor="{StaticResource TitleColor}"
+                                   Margin="{StaticResource TitleMargin}"
+                                   FontAttributes="Bold"
+                                   />
+							
+                            <Label Text="{Binding Text}"
+                                   TextColor="{StaticResource TitleColor}"
+                                   Margin="{StaticResource TitleMargin}"
+                                   FontAttributes="Bold"
+                                   />
+						</StackLayout>
+
+                        <StackLayout Grid.Row="1"
+                                     Orientation="Horizontal"
+                                     BackgroundColor="{Binding CorrectAnswer, 
+                                                               Converter={StaticResource IntToColorConverter},
+                                                               ConverterParameter=1}"
+                                     Margin="0,6"
+                                     >
+
+                            <Grid BackgroundColor="{StaticResource LetterBackgroundColor}"
+                                  HeightRequest="{StaticResource GridHeight}"
+                                  WidthRequest="{StaticResource GridWidth}"
+                                  >
+                                <Label Text="A"
+                                       TextColor="{StaticResource QuestionLabelColor}"
+                                       Margin="4"
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center"
+                                       FontSize="20"
+                                       />
+                            </Grid>
+
+                            <Label Text="{Binding FirstAnswer}"
+                                   TextColor="{StaticResource TextColor}"
+                                   HorizontalTextAlignment="Start"
+                                   VerticalTextAlignment="Center"
+                                   />
+                            
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="2"
+                                     Orientation="Horizontal"
+                                     BackgroundColor="{Binding CorrectAnswer, 
+                                                               Converter={StaticResource IntToColorConverter},
+                                                               ConverterParameter=2}"
+                                     Margin="0,6"
+                                     >
+							
+                            <Grid BackgroundColor="{StaticResource LetterBackgroundColor}"
+                                  HeightRequest="{StaticResource GridHeight}"
+                                  WidthRequest="{StaticResource GridWidth}"
+                                  >
+                                <Label Text="B"
+                                       TextColor="{StaticResource QuestionLabelColor}"
+                                       Margin="4"
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center"
+                                       FontSize="20"
+                                       />
+                            </Grid>
+
+                            <Label Text="{Binding SecondAnswer}"
+                                   TextColor="{StaticResource TextColor}"
+                                   HorizontalTextAlignment="Start"
+                                   VerticalTextAlignment="Center"
+                                   />
+                            
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="3"
+                                     Orientation="Horizontal"
+                                     BackgroundColor="{Binding CorrectAnswer, 
+                                                               Converter={StaticResource IntToColorConverter},
+                                                               ConverterParameter=3}"
+                                     Margin="0,6"
+                                     >
+							
+                            <Grid BackgroundColor="{StaticResource LetterBackgroundColor}"
+                                  HeightRequest="{StaticResource GridHeight}"
+                                  WidthRequest="{StaticResource GridWidth}"
+                                  >
+                                <Label Text="C"
+                                       TextColor="{StaticResource QuestionLabelColor}"
+                                       Margin="4"
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center"
+                                       FontSize="20"
+                                       />
+                            </Grid>
+
+                            <Label Text="{Binding ThirdAnswer}"
+                                   TextColor="{StaticResource TextColor}"
+                                   HorizontalTextAlignment="Start"
+                                   VerticalTextAlignment="Center"
+                                   />
+                            
+                        </StackLayout>
+                        
+                    </Grid>
+
+				</ViewCell>
+			</DataTemplate>
+			
+		</ResourceDictionary>
+	</Page.Resources>
+
+	<Grid Padding="12">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+		<StackLayout Orientation="Horizontal"
+				     VerticalOptions="Center"
+                     HorizontalOptions="Center"
+				     >
+			<StackLayout.Padding>
+                <OnPlatform x:TypeArguments="Thickness"
+                            iOS="0,24"
+                            Android="0,24"
+						    />
+			</StackLayout.Padding>
+			
+			<Label Text="SCORE : "
+				   TextColor="{StaticResource TextColor}"
+                   FontAttributes="Bold"
+				   />
+
+			<Label Text="{Binding Score}"
+                   TextColor="{StaticResource ScoreColor}"
+                   FontAttributes="Bold"
+                   />
+			
+		</StackLayout>
+
+		<ListView Grid.Row="2" x:Name="WrongAnswersListView"
+				  HasUnevenRows="true"
+                  ItemsSource="{Binding WrongQuestions}"
+				  SeparatorColor="Transparent"
+				  SeparatorVisibility="None"
+                  ItemTemplate="{StaticResource ItemTemplate}"
+				  CachingStrategy="RecycleElement"
+                  BackgroundColor="{StaticResource BackgroundColor}"
+				  Header="Wrong Answers"
+				  ItemTapped="ListView_OnItemTapped"
+				  />
+
+		<Button Grid.Row="3" 
+				Text="Start Again"
+                TextColor="{StaticResource TextColor}"
+                BackgroundColor="{StaticResource ButtonColor}"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center"
+                Clicked="StartAgain_OnBtnClicked"
+                Margin="0,12"
+				/>
+		
+	</Grid>
+	
 </ContentPage>

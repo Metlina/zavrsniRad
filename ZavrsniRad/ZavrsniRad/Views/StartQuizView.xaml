@@ -4,19 +4,7 @@
 		x:Class="ZavrsniRad.Views.StartQuizView"
         BackgroundColor="{StaticResource BackgroundColor}"
 		>
-
-	<Page.Resources>
-        <ResourceDictionary>
-			
-            <OnPlatform x:Key="TitleMargin"
-                        x:TypeArguments="Thickness"
-                        iOS="0,24"
-                        Android="0,24"
-                        />
-			
-		</ResourceDictionary>
-	</Page.Resources>
-
+        
 	<Grid Padding="12">
 		
 		<Grid.RowDefinitions>

@@ -1,21 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:local="clr-namespace:ZavrsniRad;assembly=ZavrsniRad"
 		x:Class="ZavrsniRad.App">
 	<Application.Resources>
 
 		<ResourceDictionary>
+
+            <local:IntToColorConverter x:Key="IntToColorConverter"/>
+			
             <Color x:Key="BackgroundColor">#F3F3F3</Color>
 			<Color x:Key="TitleColor">#444444</Color>
+            <Color x:Key="LetterBackgroundColor">#0081FF</Color>
             <Color x:Key="LetterColor">#0081FF</Color>
+			<Color x:Key="QuestionLabelColor">White</Color>
             <Color x:Key="CorrectAnswerColor">#57B947</Color>
+			<Color x:Key="SelectedAnswerColor">#FFC411</Color>
             <Color x:Key="ButtonColor">#007EFF</Color>
 			<Color x:Key="TextColor">#3A3A3A</Color>
+			<Color x:Key="ScoreColor">#ED1C24</Color>
 
-			<OnPlatform x:Key="bagf"
-                        x:TypeArguments="x:Double"
-                        iOS="60"
-                        Android="60"
+            <OnPlatform x:Key="TitleMargin"
+                        x:TypeArguments="Thickness"
+                        iOS="0,24"
+                        Android="0,24"
                         />
 			
 		</ResourceDictionary>

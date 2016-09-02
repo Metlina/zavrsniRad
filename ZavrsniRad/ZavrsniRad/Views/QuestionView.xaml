@@ -5,7 +5,25 @@
 		BackgroundColor="{StaticResource BackgroundColor}"
 		>
 
-	<Grid>
+	<Page.Resources>
+        <ResourceDictionary>
+			
+            <OnPlatform x:Key="GridHeight"
+					    x:TypeArguments="x:Double"
+                        iOS="60"
+                        Android="60"
+					    />
+
+            <OnPlatform x:Key="GridWidth"
+                        x:TypeArguments="x:Double"
+                        iOS="60"
+                        Android="60"
+                        />
+			
+		</ResourceDictionary>
+	</Page.Resources>
+
+	<Grid Padding="12">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -14,12 +32,136 @@
 
         <Grid BindingContext="{Binding CurrentQuestionViewModel}"
 			  Padding="12">
-			<Label Text="{Binding Text}"/>
+
+			<Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+
+			<StackLayout Orientation="Horizontal"
+					     VerticalOptions="Center"
+                         HorizontalOptions="Center"  
+                         >
+                <Label Text="{Binding QuestionNumberString}"
+                       TextColor="{StaticResource TitleColor}"
+                       Margin="{StaticResource TitleMargin}"
+                       FontAttributes="Bold"
+                       />
+                
+                <Label Text="{Binding Text}"
+                       TextColor="{StaticResource TitleColor}"
+                       Margin="{StaticResource TitleMargin}"
+                       FontAttributes="Bold"
+                       />
+            </StackLayout>
+			
+			<StackLayout Grid.Row="1" x:Name="FirstStackLayout"
+					     Orientation="Horizontal"
+					     BackgroundColor="{StaticResource QuestionLabelColor}"
+					     Margin="0,6"
+					     >
+
+				<StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapCommand}"
+							              CommandParameter="1"
+							              />
+				</StackLayout.GestureRecognizers>
+				
+                <Grid BackgroundColor="{StaticResource LetterBackgroundColor}"
+					  HeightRequest="{StaticResource GridHeight}"
+					  WidthRequest="{StaticResource GridWidth}"
+                         >
+                    <Label Text="A"
+                           TextColor="{StaticResource QuestionLabelColor}"
+                           Margin="4"
+						   HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"
+						   FontSize="20"
+                           />
+                </Grid>
+
+				<Label Text="{Binding FirstAnswer}"
+					   TextColor="{StaticResource TextColor}"
+                       HorizontalTextAlignment="Start"
+					   VerticalTextAlignment="Center"
+					   />
+				
+			</StackLayout>
+
+			<StackLayout Grid.Row="2" x:Name="SecondStackLayout"
+                         Orientation="Horizontal"
+                         BackgroundColor="{StaticResource QuestionLabelColor}"
+					     Margin="0,6"
+                         >
+				<StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapCommand}"
+                                          CommandParameter="2"
+                                          />
+                </StackLayout.GestureRecognizers>
+                <Grid BackgroundColor="{StaticResource LetterBackgroundColor}"
+                      HeightRequest="{StaticResource GridHeight}"
+                      WidthRequest="{StaticResource GridWidth}"
+                         >
+                    <Label Text="B"
+                           TextColor="{StaticResource QuestionLabelColor}"
+                           Margin="4"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"
+                           FontSize="20"
+                           />
+                </Grid>
+
+                <Label Text="{Binding SecondAnswer}"
+                       TextColor="{StaticResource TextColor}"
+                       HorizontalTextAlignment="Start"
+                       VerticalTextAlignment="Center"
+                       />
+                
+            </StackLayout>
+
+			<StackLayout Grid.Row="3" x:Name="ThirdStackLayout"
+                         Orientation="Horizontal"
+                         BackgroundColor="{StaticResource QuestionLabelColor}"
+					     Margin="0,6"
+                         >
+				<StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapCommand}"
+                                          CommandParameter="3"
+                                          />
+                </StackLayout.GestureRecognizers>
+                <Grid BackgroundColor="{StaticResource LetterBackgroundColor}"
+                      HeightRequest="{StaticResource GridHeight}"
+                      WidthRequest="{StaticResource GridWidth}"
+                         >
+                    <Label Text="C"
+                           TextColor="{StaticResource QuestionLabelColor}"
+                           Margin="4"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"
+                           FontSize="20"
+                           />
+                </Grid>
+
+                <Label Text="{Binding ThirdAnswer}"
+                       TextColor="{StaticResource TextColor}"
+                       HorizontalTextAlignment="Start"
+                       VerticalTextAlignment="Center"
+                       />
+                
+            </StackLayout>
+			
 		</Grid>
 
 		<Button Grid.Row="1"
 				Text="Confirm"
 				Command="{Binding AnswerCommand}"
+				TextColor="{StaticResource TextColor}"
+                BackgroundColor="{StaticResource ButtonColor}"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center"
+                Margin="0,56,0,12"
 				/>
 		
 	</Grid>

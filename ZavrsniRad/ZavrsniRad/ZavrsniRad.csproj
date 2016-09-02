@@ -71,7 +71,6 @@
       <DependentUpon>AboutView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\QuestionsViewModel.cs" />
-    <Compile Include="ViewModelLocator.cs" />
     <Compile Include="Views\CategoryView.xaml.cs">
       <DependentUpon>CategoryView.xaml</DependentUpon>
     </Compile>
@@ -83,6 +82,11 @@
       <DependentUpon>ScoreView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\QuestionViewModel.cs" />
+    <Compile Include="ViewModels\TappedMessage.cs" />
+    <Compile Include="ViewModels\AnswerMessage.cs" />
+    <Compile Include="ViewModels\AlreadySelectedMessage.cs" />
+    <Compile Include="LINQExtensions.cs" />
+    <Compile Include="IntToColorConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Practices.ServiceLocation">

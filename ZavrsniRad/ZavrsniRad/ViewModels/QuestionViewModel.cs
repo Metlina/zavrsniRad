@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Messaging;
 using Xamarin.Forms;
 using ZavrsniRad.Model.Model;
 
@@ -8,54 +9,64 @@ namespace ZavrsniRad.ViewModels
 {
     public class QuestionViewModel : ViewModelBase
     {
-        bool _isCorrect;
+        int _lastOne = 0;
 
-        string _text;
-        public string Text
-        {
-            get { return _text; }
-            private set { Set(ref _text, value); }
-        }
+        public string Text { get; private set; }
+        public string FirstAnswer { get; private set; }
+        public string SecondAnswer { get; private set; }
+        public string ThirdAnswer { get; private set; }
 
-        string _firstAnswer;
-        public string FirstAnswer
-        {
-            get { return _firstAnswer; }
-            private set { Set(ref _firstAnswer, value); }
-        }
+        public int QuestionNumber { get; private set; }
+        public string QuestionNumberString => QuestionNumber + ".";
 
-        string _secondAnswer;
-        public string SecondAnswer
-        {
-            get { return _secondAnswer; }
-            private set { Set(ref _secondAnswer, value); }
-        }
+        public int CorrectAnswer { get; private set; }
+        public bool IsCorrect { get; private set; }
+        public bool CorrectAnswerBool => GetCorrectAnswer();
 
-        string _thirdAnswer;
-        public string ThirdAnswer
-        {
-            get { return _thirdAnswer; }
-            private set { Set(ref _thirdAnswer, value); }
-        }
-
-        public ICommand SelectedAnswer { get; }
+        public ICommand TapCommand { get; }
 
         public QuestionViewModel(Question question)
         {
             if (question == null)
                 throw new ArgumentNullException(nameof(question));
 
-            SelectedAnswer = new Command<int>(Answer);
+            TapCommand = new Command<string>(Tap);
 
             Text = question.Text;
             FirstAnswer = question.FirstAnswer;
             SecondAnswer = question.SecondAnswer;
             ThirdAnswer = question.ThirdAnswer;
+            CorrectAnswer = question.CorrectAnswer;
+            QuestionNumber = question.Id;
         }
 
-        void Answer(int selected)
+        bool GetCorrectAnswer()
         {
-            
+            return false;
+        }
+
+        void Tap(string selected)
+        {
+            var i = int.Parse(selected);
+
+            if (i == _lastOne)
+            {
+                Messenger.Default.Send(new AlreadySelectedMessage(i));
+                return;
+            }
+
+            if (i == CorrectAnswer)
+            {
+                IsCorrect = true;
+            }
+            else
+            {
+                IsCorrect = false;
+            }
+
+            Messenger.Default.Send(new TappedMessage(i));
+
+            _lastOne = int.Parse(selected);
         }
     }
 }

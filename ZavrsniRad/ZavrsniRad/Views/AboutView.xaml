@@ -6,6 +6,34 @@
 		Title="About"
 		>
 
-    <Label Text="About View"/>
+	<Grid Padding="12"
+		  HorizontalOptions="Center"
+		  VerticalOptions="Center"
+		  >
+
+		<Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		
+        <Label Text="Quizco is simple quiz app build with Xamarin.Forms."
+               TextColor="{StaticResource TitleColor}"
+               FontSize="30"
+               Margin="{StaticResource TitleMargin}"
+               VerticalOptions="Center"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"   
+               />
+
+		<Label Grid.Row="1"
+			   Text="Created by Tino Petrina"
+               TextColor="{StaticResource TitleColor}"
+               FontSize="Medium"
+               Margin="{StaticResource TitleMargin}"
+               VerticalOptions="Center"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"   
+               />
+	</Grid>
 	
 </ContentPage>

@@ -85,7 +85,6 @@
     <Compile Include="ViewModels\TappedMessage.cs" />
     <Compile Include="ViewModels\AnswerMessage.cs" />
     <Compile Include="ViewModels\AlreadySelectedMessage.cs" />
-    <Compile Include="LINQExtensions.cs" />
     <Compile Include="IntToColorConverter.cs" />
   </ItemGroup>
   <ItemGroup>

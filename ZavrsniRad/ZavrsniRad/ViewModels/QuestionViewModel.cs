@@ -11,17 +11,16 @@ namespace ZavrsniRad.ViewModels
     {
         int _lastOne = 0;
 
-        public string Text { get; private set; }
-        public string FirstAnswer { get; private set; }
-        public string SecondAnswer { get; private set; }
-        public string ThirdAnswer { get; private set; }
+        public string Text { get; }
+        public string FirstAnswer { get; }
+        public string SecondAnswer { get; }
+        public string ThirdAnswer { get;}
 
-        public int QuestionNumber { get; private set; }
+        public int QuestionNumber { get; }
         public string QuestionNumberString => QuestionNumber + ".";
 
-        public int CorrectAnswer { get; private set; }
+        public int CorrectAnswer { get; }
         public bool IsCorrect { get; private set; }
-        public bool CorrectAnswerBool => GetCorrectAnswer();
 
         public ICommand TapCommand { get; }
 
@@ -38,11 +37,6 @@ namespace ZavrsniRad.ViewModels
             ThirdAnswer = question.ThirdAnswer;
             CorrectAnswer = question.CorrectAnswer;
             QuestionNumber = question.Id;
-        }
-
-        bool GetCorrectAnswer()
-        {
-            return false;
         }
 
         void Tap(string selected)

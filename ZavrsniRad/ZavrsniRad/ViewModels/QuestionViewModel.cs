@@ -46,6 +46,7 @@ namespace ZavrsniRad.ViewModels
             if (i == _lastOne)
             {
                 Messenger.Default.Send(new AlreadySelectedMessage(i));
+                IsCorrect = false;
                 return;
             }
 

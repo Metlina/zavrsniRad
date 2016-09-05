@@ -186,7 +186,19 @@
                   BackgroundColor="{StaticResource BackgroundColor}"
 				  Header="Wrong Answers"
 				  ItemTapped="ListView_OnItemTapped"
+				  IsVisible="{Binding HasWrongQuestions}"
 				  />
+
+	    <Label Grid.Row="2" 
+			   Text="Good job, you have answered all questions correctly"
+               TextColor="{StaticResource TitleColor}"
+               FontSize="30"
+               Margin="{StaticResource TitleMargin}"
+               VerticalOptions="Center"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"   
+			   IsVisible="{Binding HasNotWrongQuestions}"
+               />
 
 		<Button Grid.Row="3" 
 				Text="Start Again"

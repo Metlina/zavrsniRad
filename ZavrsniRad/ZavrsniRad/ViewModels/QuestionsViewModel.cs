@@ -22,6 +22,20 @@ namespace ZavrsniRad.ViewModels
             private set { Set(ref _currentQuestion, value); }
         }
 
+        bool _hasWrongQuestions;
+        public bool HasWrongQuestions
+        {
+            get { return _hasWrongQuestions; }
+            private set { Set(ref _hasWrongQuestions, value); }
+        }
+
+        bool _hasNotWrongQuestions;
+        public bool HasNotWrongQuestions
+        {
+            get { return _hasNotWrongQuestions; }
+            private set { Set(ref _hasNotWrongQuestions, value); }
+        }
+
         public QuestionViewModel CurrentQuestionViewModel 
             => CurrentQuestion > 0 && CurrentQuestion <= Questions.Count ? Questions[CurrentQuestion - 1] : null;
 
@@ -46,16 +60,29 @@ namespace ZavrsniRad.ViewModels
             Messenger.Default.Send(new AnswerMessage());
 
             CurrentQuestion++;
-            RaisePropertyChanged(nameof(CurrentQuestionViewModel));
+            //RaisePropertyChanged(nameof(CurrentQuestionViewModel));
 
             if (CurrentQuestion > 5)
             {
                 WrongQuestions = Questions.Where(x => !x.IsCorrect).ToList();
                 Score = Questions.Where(x => x.IsCorrect).ToList().Count;
 
+                if (WrongQuestions.Count > 0)
+                {
+                    HasWrongQuestions = true;
+                    HasNotWrongQuestions = false;
+                }
+                else
+                {
+                    HasWrongQuestions = false;
+                    HasNotWrongQuestions = true;
+                }
+
                 var page = new ScoreView { BindingContext = this };
                 await Application.Current.MainPage.Navigation.PushAsync(page);
             }
+
+            RaisePropertyChanged(nameof(CurrentQuestionViewModel));
         }
     }
 }

@@ -25,12 +25,15 @@ namespace ZavrsniRad.Views
                 {
                     case 1:
                         FirstStackLayout.BackgroundColor = (Color)Application.Current.Resources["SelectedAnswerColor"];
+                        ClearSelectedFirst();
                         break;
                     case 2:
                         SecondStackLayout.BackgroundColor = (Color)Application.Current.Resources["SelectedAnswerColor"];
+                        ClearSelectedSecond();
                         break;
                     case 3:
                         ThirdStackLayout.BackgroundColor = (Color)Application.Current.Resources["SelectedAnswerColor"];
+                        ClearSelectedThird();
                         break;
                 }
             });
@@ -50,6 +53,30 @@ namespace ZavrsniRad.Views
                         break;
                 }
             });
+        }
+
+        void ClearSelectedFirst()
+        {
+            if (SecondStackLayout.BackgroundColor == (Color)Application.Current.Resources["SelectedAnswerColor"])
+                SecondStackLayout.BackgroundColor = (Color)Application.Current.Resources["QuestionLabelColor"];
+            if (ThirdStackLayout.BackgroundColor == (Color)Application.Current.Resources["SelectedAnswerColor"])
+                ThirdStackLayout.BackgroundColor = (Color)Application.Current.Resources["QuestionLabelColor"];
+        }
+
+        void ClearSelectedSecond()
+        {
+            if (FirstStackLayout.BackgroundColor == (Color)Application.Current.Resources["SelectedAnswerColor"])
+                FirstStackLayout.BackgroundColor = (Color)Application.Current.Resources["QuestionLabelColor"];
+            if (ThirdStackLayout.BackgroundColor == (Color)Application.Current.Resources["SelectedAnswerColor"])
+                ThirdStackLayout.BackgroundColor = (Color)Application.Current.Resources["QuestionLabelColor"];
+        }
+
+        void ClearSelectedThird()
+        {
+            if (SecondStackLayout.BackgroundColor == (Color)Application.Current.Resources["SelectedAnswerColor"])
+                SecondStackLayout.BackgroundColor = (Color)Application.Current.Resources["QuestionLabelColor"];
+            if (FirstStackLayout.BackgroundColor == (Color)Application.Current.Resources["SelectedAnswerColor"])
+                FirstStackLayout.BackgroundColor = (Color)Application.Current.Resources["QuestionLabelColor"];
         }
     }
 }

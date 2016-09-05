@@ -173,6 +173,11 @@
                    TextColor="{StaticResource ScoreColor}"
                    FontAttributes="Bold"
                    />
+
+			<Label Text="{Binding OfScore}"
+                   TextColor="{StaticResource ScoreColor}"
+                   FontAttributes="Bold"
+                   />
 			
 		</StackLayout>
 

@@ -41,6 +41,8 @@ namespace ZavrsniRad.ViewModels
 
         public int Score { get; private set;}
 
+        public string OfScore => "/ 5";
+
         public ICommand AnswerCommand { get; }
 
         public QuestionsViewModel(List<Question> questions)

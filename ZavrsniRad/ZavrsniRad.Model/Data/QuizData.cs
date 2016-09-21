@@ -63,7 +63,7 @@ namespace ZavrsniRad.Model.Data
             var questionEasy5 = new Question
             {
                 Id = 5,
-                Text = "Which pattern was invented at Microosft to make data binding with XAML easier?",
+                Text = "Which pattern was invented at Microsoft to make data binding with XAML easier?",
                 FirstAnswer = "MVC",
                 SecondAnswer = "MVVM",
                 ThirdAnswer = "PCL",
@@ -152,7 +152,7 @@ namespace ZavrsniRad.Model.Data
             var questionHard2 = new Question
             {
                 Id = 2,
-                Text = "Xamarin for Android compiltaion uses which type of compilation",
+                Text = "Xamarin for Android compilation uses which type of compilation",
                 FirstAnswer = "JIT",
                 SecondAnswer = "AOT",
                 ThirdAnswer = "C# Intpreter",
@@ -185,7 +185,7 @@ namespace ZavrsniRad.Model.Data
             var questionHard5 = new Question
             {
                 Id = 5,
-                Text = "What class do we use for platfrom specific code?",
+                Text = "What class do we use for platform specific code?",
                 FirstAnswer = "Platform",
                 SecondAnswer = "Device",
                 ThirdAnswer = "Idiom",
